@@ -28,8 +28,11 @@ archive/
 !data/README.md
 
 # --- Trained model artifacts (large binaries — see models/README.md) ---
-models/*.keras
+# Ignore checkpoints but ALLOW the deployment model + metadata
 models/checkpoints/
+!models/emotion_model.keras
+!models/labels.json
+!models/metrics.json
 !models/README.md
 
 # --- OS / editor ---

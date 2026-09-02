@@ -1,0 +1,32 @@
+# Directories not needed in the Docker build context
+frontend/
+archive/
+data/
+ml/
+screenshots/
+
+# Virtual environments
+.venv/
+venv/
+*/venv/
+*/.venv/
+
+# Node
+node_modules/
+
+# Git
+.git/
+.gitignore
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/

@@ -1,0 +1,41 @@
+# render.yaml — Render Blueprint (Infrastructure-as-Code)
+# Connect this repo to Render via "New → Blueprint" and it will
+# auto-detect this file and create both services.
+
+services:
+  # ── Backend API (Docker) ────────────────────────────────────────
+  - type: web
+    name: emotionvision-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: CORS_ORIGINS
+        value: https://emotionvision-ai.onrender.com
+      - key: EMOTIONVISION_MODELS_DIR
+        value: /app/models
+      - key: CONFIDENCE_THRESHOLD
+        value: "0.50"
+      - key: FACE_DETECTOR
+        value: haar
+      - key: MAX_UPLOAD_SIZE_MB
+        value: "8"
+
+  # ── Frontend Static Site ────────────────────────────────────────
+  - type: web
+    name: emotionvision-ai
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    plan: free
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        value: https://emotionvision-api.onrender.com
