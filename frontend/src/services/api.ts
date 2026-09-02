@@ -2,7 +2,7 @@ import type { HealthResponse, ModelMetrics, PredictionResponse } from "../types"
 
 // Never hard-code the backend URL — always read it from the environment so
 // dev/staging/prod can point at different backends without code changes.
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
+const API_URL = import.meta.env.VITE_API_URL ?? "";
 
 export class ApiError extends Error {
   status: number;

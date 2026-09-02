@@ -40,3 +40,8 @@ models/checkpoints/
 Thumbs.db
 .vscode/
 .idea/
+
+# --- Build / temporary files ---
+*.tsbuildinfo
+tunnel.txt
+tunnel2.txt
