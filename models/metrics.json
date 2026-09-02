@@ -1,0 +1,20 @@
+{
+  "backbone": "mobilenetv3",
+  "num_classes": 7,
+  "classes": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "neutral",
+    "sad",
+    "surprise"
+  ],
+  "final_train_accuracy": 0.5136685967445374,
+  "final_val_accuracy": 0.5392111539840698,
+  "test_accuracy": 0.5528002381324768,
+  "test_loss": 1.1781901121139526,
+  "test_auc": 0.8828951716423035,
+  "epochs_head": 15,
+  "epochs_fine_tune": 15
+}

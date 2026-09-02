@@ -1,0 +1,39 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+*.log
+
+# --- Node / frontend ---
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# --- Environment files ---
+.env
+backend/.env
+frontend/.env
+
+# --- Dataset (never commit raw or prepared data) ---
+data/raw/
+data/train/
+data/validation/
+data/test/
+archive/
+!data/README.md
+
+# --- Trained model artifacts (large binaries — see models/README.md) ---
+models/*.keras
+models/checkpoints/
+!models/README.md
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
