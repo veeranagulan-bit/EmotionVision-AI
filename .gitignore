@@ -1,47 +1,52 @@
-# --- Python ---
+# Python
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 *.egg-info/
+
+# Virtual environments
 .venv/
 venv/
+ml/venv/
+backend/venv/
+
+# Testing / cache
 .pytest_cache/
 .mypy_cache/
+
+# Logs
 *.log
 
-# --- Node / frontend ---
-node_modules/
-frontend/dist/
-frontend/.vite/
-npm-debug.log*
-
-# --- Environment files ---
-.env
-backend/.env
-frontend/.env
-
-# --- Dataset (never commit raw or prepared data) ---
-data/raw/
-data/train/
-data/validation/
-data/test/
-archive/
-!data/README.md
-
-# --- Trained model artifacts (large binaries — see models/README.md) ---
-# Ignore checkpoints but ALLOW the deployment model + metadata
-models/checkpoints/
-!models/emotion_model.keras
-!models/labels.json
-!models/metrics.json
-!models/README.md
-
-# --- OS / editor ---
-.DS_Store
-Thumbs.db
-.vscode/
+# IDE
 .idea/
+.vscode/
 
-# --- Build / temporary files ---
+# Frontend
+# Frontend
+node_modules/
+
+frontend/.vite/
 *.tsbuildinfo
+npm-debug.log*
+# Temporary tunnel files
 tunnel.txt
 tunnel2.txt
+tunnel3.txt
+tunnel_latest.txt
+tunnel_now.txt
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+# ML datasets - not needed for deployment
+data/
+archive/
+
+# Model training checkpoints - not needed for deployment
+models/checkpoints/

@@ -1,9 +1,5 @@
-# render.yaml — Render Blueprint (Infrastructure-as-Code)
-# Connect this repo to Render via "New → Blueprint" and it will
-# auto-detect this file and create both services.
-
 services:
-  # ── Backend API (Docker) ────────────────────────────────────────
+  # Backend API
   - type: web
     name: emotionvision-api
     runtime: docker
@@ -21,7 +17,7 @@ services:
       - key: MAX_UPLOAD_SIZE_MB
         value: "8"
 
-  # ── Frontend Static Site ────────────────────────────────────────
+  # Frontend
   - type: web
     name: emotionvision-ai
     runtime: static

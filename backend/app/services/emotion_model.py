@@ -30,7 +30,7 @@ else:
 sys.path.insert(0, str(ML_DIR))
 
 # Import prediction logic from ml/predict.py
-from app.predict import EmotionPredictor, ModelNotLoadedError  # noqa: E402
+from predict import EmotionPredictor, ModelNotLoadedError  # noqa: E402
 
 from app.config import (  # noqa: E402
     MODEL_PATH,
